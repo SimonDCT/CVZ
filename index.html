@@ -33,10 +33,6 @@
             width: 100%;
             height: 100%;
         }
-
-        .teptep{
-            filter: blur(1000px);
-        }
     </style>
 
     <script>
@@ -93,7 +89,7 @@ import 'aframe-gif-shader'
                     material="alpha-test:0.5" position="0 5 0" rotation="90 0 -180" scale="3 3 3"></a-video> -->
                     <!-- <a-entity loop="0" id="video-src" position="0 0 0" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s1.gif);transparent:true;"></a-entity>
                     <a-entity position="0 2 1" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s4.gif);transparent:true;"></a-entity> -->
-                    <a-video class="teptep" position="0 0 0" src="/assets/teptep.mp4"></a-video>
+                    <a-video style="filter: blur(100px);" position="0 0 0" src="/assets/teptep.mp4"></a-video>
 
 
             </a-entity>
