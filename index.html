@@ -44,6 +44,11 @@
             }
         });
     </script>
+
+<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js">
+    import 'aframe'
+import 'aframe-gif-shader'
+</script>
 </head>
 
 <body>
@@ -56,14 +61,16 @@
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
 
         <!-- PRE-LOAD OUR ASSETS FOR PERFORMANCE -->
-        <a-assets>
-            <!-- PLANE BACKGROUND -->
+
+        <!-- <a-assets>
+           
             <a-video id="video-src" position="0 5 0" rotation="90 0 -180" scale="3 3 3" src="S1/s1.gif"
                 loop="true"></a-video>
 
-            <!-- MENU ITEM MIXIN -->
+           
 
-        </a-assets>
+        </a-assets> -->
+
         <!-- END ASSET PRE-LOADING -->
 
         <!-- CREATE A-FRAME CAMERA AND REPLACE IT WITH ZAPPAR'S CAMERA -->
@@ -77,9 +84,9 @@
 
                 <!-- REMEMBER - 3D OBJECTS TRACK FROM THE CENTER OF THE IMAGE -->
                 <!-- ANIMATED PLANE BACKGROUND -->
-                <a-video id="card-background" src="#video-src" height="2" width="3" position="0 0 0"
-                    material="alpha-test:0.5"></a-video>
-
+                <!-- <a-video id="card-background" src="/S1/s1.gif" height="2" width="3" position="0 0 0"
+                    material="alpha-test:0.5" position="0 5 0" rotation="90 0 -180" scale="3 3 3"></a-video> -->
+                    <a-entity geometry="primitive:plane;" material="shader:gif;src:url(/S1/s1.gif);"></a-entity>
 
 
             </a-entity>
