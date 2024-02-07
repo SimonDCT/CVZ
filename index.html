@@ -25,22 +25,7 @@
 
     <meta charset="utf-8" />
     <title>A-Frame Business Card Example</title>
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .teptepV{
-            background-blend-mode: lighten;
-            border: 1px;
-            border-color: red;
-        }
-    </style>
-
+    
     <script>
         // Only show our content when the image becomes visible
         AFRAME.registerComponent("visibility-changer", {
@@ -50,6 +35,7 @@
             }
         });
     </script>
+
 
 
 </head>
@@ -67,22 +53,37 @@
 
         <a-assets>
            
-            <a-assets>
-                <img id="scene1" src="/S1/1.png">
-              </a-assets>
+            <!-- <a-video id="video-src" position="0 5 0" rotation="90 0 -180" scale="3 3 3" src="S1/s1.gif"
+                loop="true"></a-video> -->
+                    <a-image  position="0 0 0" src="/S1/1.png"></a-image>
 
            
 
         </a-assets>
 
-       
+        <!-- END ASSET PRE-LOADING -->
+
+        <!-- CREATE A-FRAME CAMERA AND REPLACE IT WITH ZAPPAR'S CAMERA -->
+        <!-- ALLOW USER TO CLICK ON ELEMENTS BY ADDING CURSOR COMPONENT & IDENTIFY RAYCASTER OBJECTS FOR BETTER PERFORMANCE -->
         <a-camera zappar-camera cursor="rayOrigin: mouse; fuse: false;" raycaster="objects: .collidable"></a-camera>
 
-       
+        <!-- SET UP OUR EXPERIENCE AS IMAGE TRACKING & GIVE IT AN IMAGE TO TRACK -->
         <a-entity zappar-image="target: assets/BusinessCard.zpt">
-            <a-entity visibility-changer> </a-entity>
+            <!-- Have a group that will only become visible when the target image comes into view-->
+            <a-entity visibility-changer>
+
+                <!-- REMEMBER - 3D OBJECTS TRACK FROM THE CENTER OF THE IMAGE -->
+                <!-- ANIMATED PLANE BACKGROUND -->
+                <!-- <a-video id="card-background" src="/S1/s1.gif" height="2" width="3" position="0 0 0"
+                    material="alpha-test:0.5" position="0 5 0" rotation="90 0 -180" scale="3 3 3"></a-video> -->
+                    <!-- <a-entity loop="0" id="video-src" position="0 0 0" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s1.gif);transparent:true;"></a-entity>
+                    <a-entity position="0 2 1" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s4.gif);transparent:true;"></a-entity> -->
+
+            </a-entity>
+            
+            <!-- END VISIBILITY CHANGER -->
         </a-entity>
-    </a-scene> 
+    </a-scene> <!-- END SCENE -->
 
 </body>
 
