@@ -35,77 +35,64 @@
         });
 
         AFRAME.registerComponent("change-scene", {
-    init: function () {
-        var el = this.el;
-        el.addEventListener('click', function () {
-            var s1 = document.getElementById('s1');
-            var s2 = document.getElementById('s2');
-            var s3 = document.getElementById('s3'); 
-            if (s1.getAttribute('visible')) {
-                s1.setAttribute('visible', false);
-                s2.setAttribute('visible', true);
-                s3.setAttribute('visible', false); 
-            } else if (s2.getAttribute('visible')) {
-                s1.setAttribute('visible', false);
-                s2.setAttribute('visible', false);
-                s3.setAttribute('visible', true); 
-            } else {
-                s1.setAttribute('visible', true);
-                s2.setAttribute('visible', false);
-                s3.setAttribute('visible', false); 
+            init: function () {
+                var el = this.el;
+                el.addEventListener('click', function () {
+                    var s1 = document.getElementById('s1');
+                    var s2 = document.getElementById('s2');
+                    var s3 = document.getElementById('s3');
+                    if (s1.getAttribute('visible')) {
+                        s1.setAttribute('visible', false);
+                        s2.setAttribute('visible', true);
+                        s3.setAttribute('visible', false);
+                    } else if (s2.getAttribute('visible')) {
+                        s1.setAttribute('visible', false);
+                        s2.setAttribute('visible', false);
+                        s3.setAttribute('visible', true);
+                    } else {
+                        s1.setAttribute('visible', true);
+                        s2.setAttribute('visible', false);
+                        s3.setAttribute('visible', false);
+                    }
+                });
             }
         });
-    }
-});
-
-
 
         AFRAME.registerComponent("toggle-filter", {
-    init: function () {
-        var el = this.el;
-        var filterApplied = false; // Initialise le filtre comme non appliqué
-        el.addEventListener('click', function () {
-            var images = document.querySelectorAll('.image');
-            images.forEach(function (image) {
-                if (filterApplied) {
-                    // Si le filtre est appliqué, remettre l'opacité à 100%
-                    image.setAttribute('material', 'color', '#ffffff');
-                    image.setAttribute('material', 'opacity', 1);
-                } else {
-                    // Si le filtre n'est pas appliqué, baisser l'opacité à 20%
-                    image.setAttribute('material', 'color', '#09092f');
-                    image.setAttribute('material', 'opacity', 0.9);
-                }
-            });
-            filterApplied = !filterApplied; // Inverser l'état du filtre
+            init: function () {
+                var el = this.el;
+                var filterApplied = false;
+                el.addEventListener('click', function () {
+                    var images = document.querySelectorAll('.image');
+                    images.forEach(function (image) {
+                        if (filterApplied) {
+                            image.setAttribute('material', 'color', '#ffffff');
+                            image.setAttribute('material', 'opacity', 1);
+                        } else {
+                            image.setAttribute('material', 'color', '#09092f');
+                            image.setAttribute('material', 'opacity', 0.9);
+                        }
+                    });
+                    filterApplied = !filterApplied;
+                });
+            }
         });
-    }
-});
-
-
-
     </script>
 
 </head>
 
 <body>
 
-    <!-- START OUR A-FRAME SCENE -->
     <a-scene loading-screen="backgroundColor: #344A60">
         <a-entity zappar-permissions-ui id="permissions"></a-entity>
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
 
-
-        <!-- END ASSET PRE-LOADING -->
-
-        <!-- CREATE A-FRAME CAMERA AND REPLACE IT WITH ZAPPAR'S CAMERA -->
-        <!-- ALLOW USER TO CLICK ON ELEMENTS BY ADDING CURSOR COMPONENT & IDENTIFY RAYCASTER OBJECTS FOR BETTER PERFORMANCE -->
         <a-camera position="0 0 -10" zappar-camera cursor="rayOrigin: mouse; fuse: false;"
             raycaster="objects: .collidable" zappar-controls-visible></a-camera>
 
-        <!-- SET UP OUR EXPERIENCE AS IMAGE TRACKING & GIVE IT AN IMAGE TO TRACK -->
+
         <a-entity zappar-image="target: assets/BusinessCard.zpt">
-            <!-- Have a group that will only become visible when the target image comes into view-->
+
             <a-entity id="s1">
 
                 <a-image class="image" position="0 0 2" scale="3 3 3" src="./assets/S1/1.png"
@@ -151,19 +138,20 @@
 
             </a-entity>
 
-            <!-- Button to Change Scene -->
+            <!-- Button Change Scene -->
             <a-entity class="button" position="-0.5 -1 2.5">
                 <a-circle value="Change Scene" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50"
                     change-scene></a-circle>
             </a-entity>
 
+            <!-- Button Toggle Filtre -->
             <a-entity class="button" position="0.5 -1 2.5">
                 <a-circle value="Toggle Filter" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50"
                     toggle-filter></a-circle>
             </a-entity>
 
         </a-entity>
-    </a-scene> <!-- END SCENE -->
+    </a-scene>
 
 </body>
 
