@@ -5,24 +5,6 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://libs.zappar.com/zappar-aframe/2.0.0/zappar-aframe.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-
-            var video = document.querySelector("#video-src");
-
-
-            window.addEventListener("click", function (event) {
-                event.stopPropagation();
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        });
-    </script>
-
     <meta charset="utf-8" />
     <title>A-Frame Business Card Example</title>
     <style>
@@ -34,10 +16,8 @@
             height: 100%;
         }
 
-        .teptepV{
+        .image {
             background-blend-mode: lighten;
-            border: 1px;
-            border-color: red;
         }
     </style>
 
@@ -49,12 +29,19 @@
                 this.el.sceneEl.addEventListener('zappar-visible', () => this.el.setAttribute("visible", true));
             }
         });
-    </script>
 
-<script src="https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js">
-    import 'aframe'
-import 'aframe-gif-shader'
-</script>
+        AFRAME.registerComponent("transparent-image", {
+            schema: {
+                transparent: { type: 'boolean', default: false }
+            },
+            init: function () {
+                if (this.data.transparent) {
+                    this.el.setAttribute("material", "transparent", true);
+                    this.el.setAttribute("material", "opacity", 0.5); // Adjust opacity as needed
+                }
+            }
+        });
+    </script>
 
 </head>
 
@@ -62,22 +49,9 @@ import 'aframe-gif-shader'
 
     <!-- START OUR A-FRAME SCENE -->
     <a-scene loading-screen="backgroundColor: #344A60">
-        <!-- Ask user for camera permissions, display some text if permission is denied -->
         <a-entity zappar-permissions-ui id="permissions"></a-entity>
-        <!-- shows a full-page dialog that informs the user they're using an unsupported browser -->
         <a-entity zappar-compatibility-ui id="compatibility"></a-entity>
 
-        <!-- PRE-LOAD OUR ASSETS FOR PERFORMANCE -->
-
-        <a-assets>
-           
-            <!-- <a-video id="video-src" position="0 5 0" rotation="90 0 -180" scale="3 3 3" src="S1/s1.gif"
-                loop="true"></a-video> -->
-                    <video id="teptepV" class="teptepv" autoplay loop="true" position="0 0 0" src="/assets/teptep.mp4"></video>
-
-           
-
-        </a-assets>
 
         <!-- END ASSET PRE-LOADING -->
 
@@ -88,19 +62,15 @@ import 'aframe-gif-shader'
         <!-- SET UP OUR EXPERIENCE AS IMAGE TRACKING & GIVE IT AN IMAGE TO TRACK -->
         <a-entity zappar-image="target: assets/BusinessCard.zpt">
             <!-- Have a group that will only become visible when the target image comes into view-->
-            <a-entity visibility-changer>
+            <a-entity>
 
-                <!-- REMEMBER - 3D OBJECTS TRACK FROM THE CENTER OF THE IMAGE -->
-                <!-- ANIMATED PLANE BACKGROUND -->
-                <!-- <a-video id="card-background" src="/S1/s1.gif" height="2" width="3" position="0 0 0"
-                    material="alpha-test:0.5" position="0 5 0" rotation="90 0 -180" scale="3 3 3"></a-video> -->
-                    <!-- <a-entity loop="0" id="video-src" position="0 0 0" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s1.gif);transparent:true;"></a-entity>
-                    <a-entity position="0 2 1" geometry="primitive:plane;" material="shader:gif;src:url(/S1/s4.gif);transparent:true;"></a-entity> -->
-                    <a-video class="teptepV" position="0 0 0" src="#teptepV"></a-video>
-
+                <a-image class="image" position="0 0 2" scale="3 3 3" src="/S1/1.png" transparent-image="transparent: true"></a-image>
+                <a-image class="image" position="0 0 1" scale="3 3 3" src="/S1/2.png"></a-image>
+             
+     
 
             </a-entity>
-            
+
             <!-- END VISIBILITY CHANGER -->
         </a-entity>
     </a-scene> <!-- END SCENE -->
