@@ -51,23 +51,31 @@
             }
         });
 
+
         AFRAME.registerComponent("toggle-filter", {
-            init: function () {
-                var el = this.el;
-                var filterApplied = true; // Variable de suivi de l'état du filtre
-                el.addEventListener('click', function () {
-                    var images = document.querySelectorAll('.image');
-                    images.forEach(function(image) {
-                        if (filterApplied) {
-                            image.removeAttribute('material');
-                        } else {
-                            image.setAttribute('material', 'color', '#0000FF');
-                        }
-                    });
-                    filterApplied = !filterApplied; // Inverser l'état du filtre
-                });
-            }
+    init: function () {
+        var el = this.el;
+        var filterApplied = false; // Initialise le filtre comme non appliqué
+        el.addEventListener('click', function () {
+            var images = document.querySelectorAll('.image');
+            images.forEach(function (image) {
+                if (filterApplied) {
+                    // Si le filtre est appliqué, remettre l'opacité à 100%
+                    image.setAttribute('material', 'color', '#ffffff');
+                    image.setAttribute('material', 'opacity', 1);
+                } else {
+                    // Si le filtre n'est pas appliqué, baisser l'opacité à 20%
+                    image.setAttribute('material', 'color', '#09092f');
+                    image.setAttribute('material', 'opacity', 0.9);
+                }
+            });
+            filterApplied = !filterApplied; // Inverser l'état du filtre
         });
+    }
+});
+
+
+
     </script>
 
 </head>
@@ -84,38 +92,51 @@
 
         <!-- CREATE A-FRAME CAMERA AND REPLACE IT WITH ZAPPAR'S CAMERA -->
         <!-- ALLOW USER TO CLICK ON ELEMENTS BY ADDING CURSOR COMPONENT & IDENTIFY RAYCASTER OBJECTS FOR BETTER PERFORMANCE -->
-        <a-camera position="0 0 -10" zappar-camera cursor="rayOrigin: mouse; fuse: false;" raycaster="objects: .collidable" zappar-controls-visible></a-camera>
+        <a-camera position="0 0 -10" zappar-camera cursor="rayOrigin: mouse; fuse: false;"
+            raycaster="objects: .collidable" zappar-controls-visible></a-camera>
 
         <!-- SET UP OUR EXPERIENCE AS IMAGE TRACKING & GIVE IT AN IMAGE TO TRACK -->
         <a-entity zappar-image="target: assets/BusinessCard.zpt">
             <!-- Have a group that will only become visible when the target image comes into view-->
             <a-entity id="s1">
 
-                <a-image class="image" position="0 0 2" scale="3 3 3" src="./assets/S1/1.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.9" scale="3.2 3.2 3.2" src="./assets/S1/2.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.8" scale="3.3 3.3 3.3" src="./assets/S1/3.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S1/4.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S1/5.png" material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 2" scale="3 3 3" src="./assets/S1/1.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.9" scale="3.2 3.2 3.2" src="./assets/S1/2.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.8" scale="3.3 3.3 3.3" src="./assets/S1/3.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S1/4.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S1/5.png"
+                    material="alphaTest: 0.4;"></a-image>
 
             </a-entity>
 
             <a-entity id="s2" visible="false">
 
-                <a-image class="image" position="0 0 2" scale="3 3 3" src="./assets/S2/1.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.9" scale="3.2 3.2 3.2" src="./assets/S2/2.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.8" scale="3.3 3.3 3.3" src="./assets/S2/3.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S2/4.png" material="alphaTest: 0.4;"></a-image>
-                <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S2/5.png" material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 2" scale="3 3 3" src="./assets/S2/1.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.9" scale="3.2 3.2 3.2" src="./assets/S2/2.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.8" scale="3.3 3.3 3.3" src="./assets/S2/3.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S2/4.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S2/5.png"
+                    material="alphaTest: 0.4;"></a-image>
 
             </a-entity>
 
             <!-- Button to Change Scene -->
             <a-entity class="button" position="-0.5 -1 2.5">
-                <a-circle value="Change Scene" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50" change-scene></a-circle>
+                <a-circle value="Change Scene" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50"
+                    change-scene></a-circle>
             </a-entity>
 
             <a-entity class="button" position="0.5 -1 2.5">
-                <a-circle value="Toggle Filter" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50" toggle-filter></a-circle>
+                <a-circle value="Toggle Filter" scale="0.2 0.2 0.2" width="0.5" height="0.5" color="#4CAF50"
+                    toggle-filter></a-circle>
             </a-entity>
 
         </a-entity>
