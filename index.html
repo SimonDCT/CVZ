@@ -35,21 +35,29 @@
         });
 
         AFRAME.registerComponent("change-scene", {
-            init: function () {
-                var el = this.el;
-                el.addEventListener('click', function () {
-                    var s1 = document.getElementById('s1');
-                    var s2 = document.getElementById('s2');
-                    if (s1.getAttribute('visible')) {
-                        s1.setAttribute('visible', false);
-                        s2.setAttribute('visible', true);
-                    } else {
-                        s1.setAttribute('visible', true);
-                        s2.setAttribute('visible', false);
-                    }
-                });
+    init: function () {
+        var el = this.el;
+        el.addEventListener('click', function () {
+            var s1 = document.getElementById('s1');
+            var s2 = document.getElementById('s2');
+            var s3 = document.getElementById('s3'); 
+            if (s1.getAttribute('visible')) {
+                s1.setAttribute('visible', false);
+                s2.setAttribute('visible', true);
+                s3.setAttribute('visible', false); 
+            } else if (s2.getAttribute('visible')) {
+                s1.setAttribute('visible', false);
+                s2.setAttribute('visible', false);
+                s3.setAttribute('visible', true); 
+            } else {
+                s1.setAttribute('visible', true);
+                s2.setAttribute('visible', false);
+                s3.setAttribute('visible', false); 
             }
         });
+    }
+});
+
 
 
         AFRAME.registerComponent("toggle-filter", {
@@ -124,6 +132,21 @@
                 <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S2/4.png"
                     material="alphaTest: 0.4;"></a-image>
                 <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S2/5.png"
+                    material="alphaTest: 0.4;"></a-image>
+
+            </a-entity>
+
+            <a-entity id="s3" visible="false">
+
+                <a-image class="image" position="0.002 0.065 2.005" scale="3 3 3" src="./assets/S3/1.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.9" scale="3.2 3.2 3.2" src="./assets/S3/2.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.8" scale="3.3 3.3 3.3" src="./assets/S3/3.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.7" scale="3.4 3.4 3.4" src="./assets/S3/4.png"
+                    material="alphaTest: 0.4;"></a-image>
+                <a-image class="image" position="0 0 1.6" scale="3.5 3.5 3.5" src="./assets/S3/5.png"
                     material="alphaTest: 0.4;"></a-image>
 
             </a-entity>
