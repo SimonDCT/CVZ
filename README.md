@@ -18,19 +18,19 @@ Afin d'accéder à l'expérience, j'ai créé une carte de visite sur Illustrato
 
 <br/>
 
-J'ai souhaité pour apporter mes connaissances aux personnes ayant des projets, des travaux, des rêves à réaliser. 
+J'ai souhaité apporter mes connaissances aux personnes ayant des projets, des travaux, des rêves à réaliser.
 
-Cette idée de vouloir "éclairer" c'est pour moi, une façon de mettre en valeur, de prendre connaissance du problème ou du besoin et de montrer qu'il est possible d'y arriver ensemble.
+L'idée de vouloir "éclairer" est pour moi une façon de mettre en valeur, de comprendre le problème ou le besoin et de montrer qu'il est possible d'y arriver ensemble.
 
-C'est pour cela que ma carte à un côté plûtot lumineux et un autre un peu plus sombre.
+C'est pourquoi ma carte a un côté plutôt lumineux et un autre un peu plus sombre.
 
-J'ai choisi de faire ce style de réalisations car ça représente bien le schéma "type" de la réalisation d'un projet dans les grandes lignes.
+J'ai choisi de réaliser ce style de projets car cela représente bien le schéma "type" de la réalisation d'un projet dans ses grandes lignes.
 
-<h3 style="text-bold"> 1ère Scène : </h3> On y voit des personnes entrain de discuter, d'analyser le marché et les pistes envisageable c'est la phase d'analyse 
+<h3 style="text-bold"> 1ère Scène : </h3> On y voit des personnes en train de discuter, d'analyser le marché et les pistes envisageables, c'est la phase d'analyse.
 
-<h3 style="text-bold"> 2ème Scène : </h3> Cette fois-ci on y voit des personnes avec des caméras, des microphones illustrant la phase de réalisation de la vidéo
+<h3 style="text-bold"> 2ème Scène : </h3> Cette fois-ci, on y voit des personnes avec des caméras et des microphones, illustrant la phase de réalisation de la vidéo.
 
-<h3 style="text-bold"> 3ème Scène : </h3> Enfin c'est la publication, la stratégie de communication sur les réseaux sociaux afin que notre projet soit visualisé par le plus de personnes possibles
+<h3 style="text-bold"> 3ème Scène : </h3> Enfin, c'est la publication et la stratégie de communication sur les réseaux sociaux afin que notre projet soit visualisé par le plus grand nombre de personnes possible.
 
 
 ## Carte Recto
