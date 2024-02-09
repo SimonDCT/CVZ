@@ -16,6 +16,23 @@ Afin d'accéder à l'expérience, j'ai créé une carte de visite sur Illustrato
  <h3 style="text-align: center"> "ensemble, mettons de la lumière sur vos projets" </h3>
 
 
+<br/>
+
+J'ai souhaité pour apporter mes connaissances aux personnes ayant des projets, des travaux, des rêves à réaliser. 
+
+Cette idée de vouloir "éclairer" c'est pour moi, une façon de mettre en valeur, de prendre connaissance du problème ou du besoin et de montrer qu'il est possible d'y arriver ensemble.
+
+C'est pour cela que ma carte à un côté plûtot lumineux et un autre un peu plus sombre.
+
+J'ai choisi de faire ce style de réalisations car ça représente bien le schéma "type" de la réalisation d'un projet dans les grandes lignes.
+
+<h3 style="text-bold"> 1ère Scène : </h3> On y voit des personnes entrain de discuter, d'analyser le marché et les pistes envisageable c'est la phase d'analyse 
+
+<h3 style="text-bold"> 2ème Scène : </h3> Cette fois-ci on y voit des personnes avec des caméras, des microphones illustrant la phase de réalisation de la vidéo
+
+<h3 style="text-bold"> 3ème Scène : </h3> Enfin c'est la publication, la stratégie de communication sur les réseaux sociaux afin que notre projet soit visualisé par le plus de personnes possibles
+
+
 ## Carte Recto
 
 ![Target Image](/assets/Carte%20de%20Viste%20;%20Recto.PNG)
