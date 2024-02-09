@@ -1,32 +1,29 @@
-# Zappar for A-Frame Examples
-This repository contains an AR example using the Zappar SDK for A-Frame.
+# Projet : Carte de visite interactive
 
-For more information, check out the package page for [Zappar for A-Frame](https://www.npmjs.com/package/@zappar/zappar-aframe) (@zappar/zappar-aframe).
+Ce projet consiste à créer une carte de visite avec une expérience immersive et interactive.
 
-## Preview
-​
-Scan the QR code below using your native camera app or QR code reader to view the example:
-​
-![Preview QR Code"](preview-qr-code.png)
+Ce projet a pour but de faire découvrir notre univers, de montrer nos compétences ainsi que d'attirer l'attention afin de se démarquer pour un poste ou un master.
 
-## Prerequisites
 
-To get started you'll want to print out the example target images, `example-tracking-image.png` and `BusinessCard.png`.
+## Visualisation du QR CODE
+​Scannez le afin de découvrir l'expérience :
+​![Preview QR Code"](/assets/QRcode.svg)
 
-qsdqsdqsd
-## Trying the Examples
+## Création de la carte de visite
 
-Due to browser restrictions surrounding use of the camera, you must use HTTPS to access the HTML files, even if doing so locally from your computer. You can use the [ZapWorks command-line tool](https://www.npmjs.com/package/@zappar/zapworks-cli) to serve a folder over HTTPS for access on your local computer, like this:
-```
-zapworks serve .
-```
+Afin d'accéder à l'expérience, j'ai créé une carte de visite sur Illustrator pour illustrer mon slogan. :
 
-The command also lets you serve the folder for access by other devices on your local network, like this:
-```
-zapworks serve . --lan
-```
+ <h3 style="text-align: center"> "ensemble, mettons de la lumière sur vos projets" </h3>
 
-Once this is running, open the link that's output on the console and tap the different HTML files to try the examples. If you'd like to try on a mobile device, ensure it's on the same local network as your computer, then visit the appropriate link in the console output.
 
-## Target Image
-![Target Image](example-tracking-image.png)
+## Carte Recto
+
+![Target Image](/assets/Carte%20de%20Viste%20;%20Recto.PNG)
+
+## Carte Verso
+
+![Target Image](/assets/Carte%20de%20Visite%20;%20Verso.PNG)
+
+Voici également une dernière carte si les deux du dessus ne fonctionne pas : 
+
+![Target Image](/assets/Last.png)
